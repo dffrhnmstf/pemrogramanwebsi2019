@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<title>Login Account</title>
+<center><head><h2>Sign In</h2></head></center>
+<br>
+<body style="margin: 200px" bgcolor="aquamarine">
+
+	<center>
+		<form method="REQUEST">
+			Username<br>
+			<input type="text" placeholder="Enter username" id="username" name="username"><br><br>
+			Password<br>
+			<input type="password"  placeholder="Enter password" id="password" name="password"><br><br>
+			<button type="submit" onclick="return login()">Submit</button>
+		</form>
+	</center>
+
+</body>
+<script type="text/javascript">
+	function login() {
+		username = document.getElementById("username").value;
+		password = document.getElementById("password").value;
+
+		if (username == "" || password == "") {
+			alert("Username or password shouldn't be empty");
+			return false;
+		}
+		else if (password.length < 8) {
+			alert("Your password less than eight elements");
+			return false;
+		}
+		else if (username == "Daffa" && password == "raihan123") {
+			window.location = "submitted.html";
+			return false;
+		}else{
+			alert("Username or password you entered was incorrect, try again.");
+		}
+	}
+</script>
+</html>
